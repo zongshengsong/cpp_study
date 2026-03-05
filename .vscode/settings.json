@@ -1,3 +1,4 @@
 {
-    "files.encoding": "gbk"
+    "files.encoding": "gbk",
+    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -g3"
 }
