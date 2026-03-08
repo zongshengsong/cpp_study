@@ -56,6 +56,10 @@ public:
 		cout << "我是一个无参的构造函数。" << endl; // 我们给构造函数函数体编写一些执行语句；
 	}
 	// 下面是带参数的构造函数 （需要自己编写）
+	Car(float, float, float, string)
+	{
+		cout << "我是一个有参的构造函数。" << endl; // 我们给构造函数函数体编写一些执行语句；
+	}
 };
 
 int main()
@@ -65,13 +69,13 @@ int main()
 
 	// 类的对象的定义格式 （这就涉及到构造函数的引用）
 	// 无参构造函数的调用方法 ：
-	Rectangle r1; // 建议此种写法，简单
-	Rectangle r2();
-	Rectangle r3 = Rectangle(); // 标准写法
+	Car r1; // 建议此种写法，简单
+	Car r2();
+	Car r3 = Car(); // 标准写法
 
 	// 有参构造函数的调用方法 ：
-	Rectangle r4(1, 2, 3, "yellow");		   // 建议此种写法，简单
-	Rectangle r5 = Rectangle(1.0, 1.0, "red"); // 标准写法
+	Car r4(1, 2, 3, "yellow");			// 建议此种写法，简单
+	Car r5 = Car(1.2, 1.0, 1.0, "red"); // 标准写法
 
 	// 带默认形参的有参构造函数的调用方法：  详见第7个demo-7有多个默认形参的构造函数在定义对象时的调用形式
 	return 0;
