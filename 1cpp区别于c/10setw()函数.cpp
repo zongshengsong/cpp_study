@@ -1,10 +1,8 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
-#include <iomanip>  // 添加这个头文件
+#include <iostream>
+#include <cstdio>
+#include <cstring>
+#include <iomanip> // 添加这个头文件
 using namespace std;
-
-
 
 /*
 1.setw()函数用来设置输出字符(串）位宽的
@@ -12,7 +10,7 @@ using namespace std;
 2.setw（）必须包含在头文件       #include <iomanip>
                                  using std::setw;
                         里面！！
-                        
+
 2.setw(n)的位宽只对它后面输出的东西有效！！
 
 3. 举例:假如你输出两句话,cout<<"hello"<<setw(5)<<"你好"<<endl;
@@ -23,8 +21,7 @@ using namespace std;
 */
 int main()
 {
-	string str1="123",str2="8956";
-   cout<<str1<<setw( 8 )<<str2<<endl;
-   return 0;
+      string str1 = "123", str2 = "8956";
+      cout << str1 << setw(8) << str2 << endl;
+      return 0;
 }
-
