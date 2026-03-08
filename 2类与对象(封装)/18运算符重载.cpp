@@ -1,10 +1,9 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
 using namespace std;
 int main()
 {
-   cout<<;
+   cout <<"0";
    return 0;
 }
-

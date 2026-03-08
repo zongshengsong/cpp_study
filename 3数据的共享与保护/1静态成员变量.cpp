@@ -1,8 +1,7 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
 using namespace std;
-
 
 /*
 静态成员变量：
@@ -11,38 +10,42 @@ using namespace std;
 
 */
 
-class Chinese{
-	private:
-		string name;
-		int age;
-	public:
-		static string home;
-	public:
-		Chinese(string name, int age):name(name),age(age){
-			cout<<name<<"\t"<<age<<"\t";
-			cout<<"constructor is called"<<endl;
-		}
-		~Chinese(){
-			cout<<name<<"destructor is called"<<endl;
-		}
-		void display();
+class Chinese
+{
+private:
+	string name;
+	int age;
 
+public:
+	static string home;
+
+public:
+	Chinese(string name, int age) : name(name), age(age)
+	{
+		cout << name << "\t" << age << "\t";
+		cout << "constructor is called" << endl;
+	}
+	~Chinese()
+	{
+		cout << name << "destructor is called" << endl;
+	}
+	void display();
 };
 
-string Chinese::home="我们都有一个家，名字叫中国！";
+string Chinese::home = "我们都有一个家，名字叫中国！";
 
-void Chinese::display(){
-	cout<<name<<'\t'<<age<<'\t'<<Chinese::home<<endl;
+void Chinese::display()
+{
+	cout << name << '\t' << age << '\t' << Chinese::home << endl;
 }
 
 int main()
 {
-	Chinese p1("宋宗胜",19);
-	Chinese p2("洪乐天",20);
-	cout<<p1.home<<endl;
-	cout<<p2.home<<endl;
+	Chinese p1("宋宗胜", 19);
+	Chinese p2("洪乐天", 20);
+	cout << p1.home << endl;
+	cout << p2.home << endl;
 	p1.display();
 	p2.display();
-   return 0;
+	return 0;
 }
-

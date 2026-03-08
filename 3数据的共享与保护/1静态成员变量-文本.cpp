@@ -18,14 +18,14 @@
 
 6.静态成员函数只能访问静态成员变量、静态成员函数和类外部的其它函数；
   特别注意：当静态成员函数调用静态成员变量时，只能直接调用，或通过类名来调用，不能在其名字前面加this->!!!!
-  
+
   如：
             static int booknum;
-				......
+            ......
             void Student::borrowbook(int n){
-             	this->booknum-=n;                     // 错误！！静态成员变量不能通过this指针调用！！
-																	//应该改为  booknum-=n; 或 Student：：booknum-=n;
-            	cout<<"借走了"<<n<<"本书..."<<endl;
+               this->booknum-=n;                     // 错误！！静态成员变量不能通过this指针调用！！
+                                                   //应该改为  booknum-=n; 或 Student：：booknum-=n;
+               cout<<"借走了"<<n<<"本书..."<<endl;
             }
 
 下面的实例有助于更好地理解静态成员数据的概念：   */
@@ -36,36 +36,37 @@ using namespace std;
 
 class Box
 {
-   public:
-      static int objectCount;
-      // 构造函数定义
-      Box(double l=2.0, double b=2.0, double h=2.0)
-      {
-         cout <<"Constructor called." << endl;
-         length = l;
-         breadth = b;
-         height = h;
-         // 每次创建对象时增加 1
-         objectCount++;
-      }
-      double Volume()
-      {
-         return length * breadth * height;
-      }
-   private:
-      double length;     // 长度
-      double breadth;    // 宽度
-      double height;     // 高度
+public:
+   static int objectCount;
+   // 构造函数定义
+   Box(double l = 2.0, double b = 2.0, double h = 2.0)
+   {
+      cout << "Constructor called." << endl;
+      length = l;
+      breadth = b;
+      height = h;
+      // 每次创建对象时增加 1
+      objectCount++;
+   }
+   double Volume()
+   {
+      return length * breadth * height;
+   }
+
+private:
+   double length;  // 长度
+   double breadth; // 宽度
+   double height;  // 高度
 };
 
 // 初始化类 Box 的静态成员
-int Box::objectCount = 0;          //当用静态成员变量来“计数”时，其功能与C语言中的静态变量功能相同，
-                                       //在整个程序结束后才会“失效”。
+int Box::objectCount = 0; // 当用静态成员变量来“计数”时，其功能与C语言中的静态变量功能相同，
+                          // 在整个程序结束后才会“失效”。
 
 int main(void)
 {
-   Box Box1(3.3, 1.2, 1.5);    // 声明 box1
-   Box Box2(8.5, 6.0, 2.0);    // 声明 box2
+   Box Box1(3.3, 1.2, 1.5); // 声明 box1
+   Box Box2(8.5, 6.0, 2.0); // 声明 box2
 
    // 输出对象的总数
    cout << "Total objects: " << Box::objectCount << endl;
