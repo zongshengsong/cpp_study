@@ -1,6 +1,6 @@
-#include<iostream>
-#include<cstdio>
-#include<cstring>
+#include <iostream>
+#include <cstdio>
+#include <cstring>
 using namespace std;
 
 /*
@@ -24,38 +24,35 @@ B,函数重载的条件：（函数要素：函数名，函数类型（即返回值类型），函数参数，函数的
 
 C,重载函数的调用规则：
 1，根据函数名找对应的函数，作为候选函数。
-	1.1如果候选函数的函数个数为0，则报未定义错误（找不到标识符）；
+  1.1如果候选函数的函数个数为0，则报未定义错误（找不到标识符）；
 2，如果候选函数个数>0,从候选中找匹配的函数（完全匹配，可以转换的匹配（char<->int ;float<->double float)
-	2.1如果匹配的函数个数==0 ，则错误（隐式转换失败）；
-	2.2如果匹配个数>0,找最佳匹配。
+  2.1如果匹配的函数个数==0 ，则错误（隐式转换失败）；
+  2.2如果匹配个数>0,找最佳匹配。
 3，最佳匹配的个数=1，就会调用此函数，
    最佳匹配的个数>1,就会报二义性；
 */
 
-
-int getmax(int a,float b)
+int getmax(int a, float b)
 {
-	return (a>b?a:b);
+  return (a > b ? a : b);
 }
 
-int getmax(float a,int b)
+int getmax(float a, int b)
 {
-	return (a>b?a:b);
+  return (a > b ? a : b);
 }
 
-char * getmax(char * a,char * b)
+char *getmax(char *a, char *b)
 {
-	return (a>b?a:b);
+  return (a > b ? a : b);
 }
-
 
 int main()
 {
-	char * p=0;
-	char * q=0;
-	char *n=getmax(p,q);
+  char *p = 0;
+  char *q = 0;
+  char *n = getmax(p, q);
 
-  cout<<getmax(1,3.9);
+  cout << getmax(1, 3.9);
   return 0;
 }
-
